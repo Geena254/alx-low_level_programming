@@ -1,7 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-/* main - program that prints the minimum number of coin to make
+/**
+ * main - program that prints the minimum number of coin to make
  * followed by a new line
  * @argv: array containing the program command line arguements
  * @argc: number of arguements in command line
@@ -27,7 +28,7 @@ int main(int argc, char *argv[])
 		else if (cents >= 10)
 			cents -= 10;
 		else if (cents >= 5)
-			cents -=5;
+			cents -= 5;
 		else if (cents >= 2)
 			cents -= 2;
 		else if (cents >= 1)
