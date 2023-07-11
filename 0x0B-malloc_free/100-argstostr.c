@@ -5,7 +5,8 @@
  * argstostr - concatenate command-line arguments into a single string
  * @ac: number of command-line arguments
  * @av: array of command-line arguments
- * Return: Pointer to the concatenated string, or NULL if allocation fails or if ac is 0 or av is NULL
+ * Return: Pointer to the concatenated string,
+ * or NULL if allocation fails or if ac is 0 or av is NULL
  */
 
 char *argstostr(int ac, char **av)
@@ -43,5 +44,5 @@ char *argstostr(int ac, char **av)
 
 	str[k] = '\0';
 
-	return str;
+	return (str);
 }
