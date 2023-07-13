@@ -22,8 +22,8 @@ char *_memset(char *s, char b, unsigned int n)
 }
 
 /**
- * -calloc - allocates memory for an array usig malloc
- * @nmemb: elements of array 
+ * _calloc - allocates memory for an array usig malloc
+ * @nmemb: elements of array
  * @size: size of each element
  * Return: 0 on success, NULL if allocation fails
  */
