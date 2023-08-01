@@ -2,7 +2,8 @@
 #include <stdlib.h>
 
 /**
- * get_nodeint_at_index - Function that gets the nth node of a listint_t linked list
+ * get_nodeint_at_index - Function that gets the nth node
+ * of a listint_t linked list
  * @head: The pointer to the head of the list
  * @index: The index of the node, starting from 0
  * Return: Pointer to the nth node, NULL if the node does not exist
