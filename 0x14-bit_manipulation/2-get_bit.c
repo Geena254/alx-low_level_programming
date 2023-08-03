@@ -14,5 +14,5 @@ int get_bit(unsigned long int n, unsigned int index)
 		return (-1);
 
 	/* Right shift n by index positions and check the rightmost bit */
-	return ((n >> index) & 1);	
+	return ((n >> index) & 1);
 }
