@@ -9,17 +9,21 @@
 
 void print_binary(unsigned long int n)
 {
-	unsigned int i;
+	int k = 63, cnt = 0;
+	unsigned long int curr;
 
-	for (i = 1 << 10; i > 0; i = i / 2)
+	for (; k >= 0; k--)
 	{
-		if (n & i)
+		curr = n >> k;
+
+		if (curr & 1)
 		{
-			printf("1");
+			_putchar('1');
+			cnt++;
 		}
-		else
-		{
-			printf("0");
-		}
+		else if (cnt)
+			_putchar('0');
 	}
+	if (!cnt)
+		_putchar('0');
 }
