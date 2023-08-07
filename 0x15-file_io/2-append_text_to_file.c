@@ -17,16 +17,16 @@ int append_text_to_file(const char *filename, char *text_content)
 
 	if (text_content != NULL)
 	{
-		for(leng = 0; text_content[leng];)
+		for (leng = 0; text_content[leng];)
 			leng++;
 	}
 
 	file_d = open("filename", O_WRONLY | O_APPEND);
-	if(file_d == -1)
+	if (file_d == -1)
 		return (-1);
 
 	byte_write = write(file_d, text_content, leng);
-	if(byte_write == -1)
+	if (byte_write == -1)
 		return (-1);
 
 	close(file_d);
