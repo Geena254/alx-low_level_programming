@@ -12,13 +12,13 @@
 int create_file(const char *filename, char *text_content)
 {
 	int file_d, bytes_write;
-	int leng = 0;
+	int leng;
 
 	if (filename == NULL)
 		return (-1);
 	if (text_content != NULL)
 	{
-		while (text_content[leng])
+		for (leng = 0; text_content[leng];)
 			leng++;
 	}
 
