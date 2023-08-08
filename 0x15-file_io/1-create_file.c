@@ -5,7 +5,7 @@
  * create_file - Function that reads a text file
  * and prints it to the POSIX standard output.
  * @filename: The name of the file to be read.
- * @text_context: NULL terminated string to write to the file
+ * @text_content: NULL terminated string to write to the file
  * Return: 1 on success, -1 on failure.
  */
 
@@ -25,12 +25,11 @@ int create_file(const char *filename, char *text_content)
 	{
 		for (leng = 0; text_content[leng];)
 			leng++;
-		text_content = "";
-	}
 
-	bytes_wr = write(file, text_content, leng);
-	if (bytes_wr != leng)
+		bytes_wr = write(file, text_content, leng);
+		if (bytes_wr != leng)
 		return (-1);
+	}
 
 	close(file);
 
