@@ -66,14 +66,14 @@ int main(int argc, char *argv[])
 		exit(97);
 	}
 
-	buf = make_buf(argv[2]);
+	buf = make_buff(argv[2]);
 	file_from = open(argv[1], O_RDONLY);
 	byte_r = read(file_from, buf, 1024);
 	file_to = open(argv[2], O_WRONLY | O_TRUNC | O_CREAT, S_IRUSR |
 			S_IRGRP | S_IWGRP | S_IWUSR | S_IROTH);
 
-	while (byte_r > 0)
-	{
+
+	do {
 		if (file_from == -1 || byte_r == -1)
 		{
 			dprintf(STDERR_FILENO,
@@ -93,7 +93,7 @@ int main(int argc, char *argv[])
 
 		byte_r = read(file_from, buf, 1024);
 		file_to = open(argv[2], O_WRONLY | O_APPEND);
-	}
+	} while (byte_r > 0);
 
 	free(buf);
 	file_close(file_from);
