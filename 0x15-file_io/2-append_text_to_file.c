@@ -9,8 +9,8 @@
 
 int append_text_to_file(const char *filename, char *text_content)
 {
-	int file_d;
-	int leng, byte_write;
+	int op, wri;
+	int leng = 0;
 
 	if (filename == NULL)
 		return (-1);
@@ -21,15 +21,14 @@ int append_text_to_file(const char *filename, char *text_content)
 			leng++;
 	}
 
-	file_d = open("filename", O_WRONLY | O_APPEND);
-	if (file_d == -1)
+	op = open(filename, O_WRONLY | O_APPEND);
+
+	wri = write(op, text_content, leng);
+
+	if (op == -1 || wri == -1)
 		return (-1);
 
-	byte_write = write(file_d, text_content, leng);
-	if (byte_write == -1)
-		return (-1);
-
-	close(file_d);
+	close(op);
 
 	return (1);
 }
