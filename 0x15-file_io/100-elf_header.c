@@ -110,9 +110,9 @@ void print_data(unsigned char *e_ident)
 }
 
 /**
- *  * print_version - Function that prints the version of an ELF header.
- *   * @e_ident: A pointer to an array containing the ELF version.
- *    */
+ * print_version - Function that prints the version of an ELF header.
+ * @e_ident: A pointer to an array containing the ELF version.
+ */
 void print_version(unsigned char *e_ident)
 {
 	printf(" Version: %d",
@@ -193,7 +193,6 @@ void print_type(unsigned int e_type, unsigned char *e_ident)
 {
 	if (e_ident[EI_DATA] == ELFDATA2MSB)
 		e_type >>= 8;
-
 	printf(" Type: ");
 
 	switch (e_type)
@@ -249,11 +248,9 @@ void print_entry(unsigned long int e_entry, unsigned char *e_ident)
 void close_elf(int elf)
 {
 	if (close(elf) == -1)
-	{
 		dprintf(STDERR_FILENO,
 				"Error: Can't close fd %d\n", elf);
 		exit(98);
-	}
 }
 
 /**
